@@ -5,7 +5,7 @@
  <div class="account">
   <p>Account Number: <%= account.account_number %></p>
   <p>Balance: <%= account.balance %></p>
-  <p>Name: <%= current_user.last_name %></p>
+  <p>Name: <%= account.user.last_name %></p>
 </div>
 <% end %>
 <% else %>
