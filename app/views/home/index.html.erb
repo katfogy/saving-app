@@ -6,6 +6,9 @@
   <p>Account Number: <%= account.account_number %></p>
   <p>Balance: <%= account.balance %></p>
   <p>Name: <%= account.user.last_name %></p>
+   <%= link_to 'View Credit History', edit_user_registration_path %>
+   <%= link_to 'View Debit History', edit_user_registration_path %>
+   <%= link_to 'Fund Wallet', edit_user_registration_path %>
 </div>
 <% end %>
 <% else %>
