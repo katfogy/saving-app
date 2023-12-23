@@ -5,14 +5,9 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    # can :read, Product, public: true
-    # can :read, Company, public: true
-    # can :read, Category, public: true
-    # if user.persisted?
-    #   can :create, Order
-    #   can :read, Order, user_id: user.id
-    # end
-
-    #  can :manage, :all if user.admin?
+    if user.persisted?
+      can :read, Account, user_id: user.id
+    end
+     can :manage, :all if user.admin?
   end
 end
