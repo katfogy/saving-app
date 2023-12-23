@@ -8,6 +8,6 @@ class Ability
     if user.persisted?
       can :read, Account, user_id: user.id
     end
-     can :manage, :all if user.admin?
+    can :manage, :all if user.role=="admin"
   end
 end

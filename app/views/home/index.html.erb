@@ -1,7 +1,13 @@
 <% if user_signed_in? %>
   <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete } %>
   <%= link_to 'Edit Profile', edit_user_registration_path %>
-<h2>Welcome: <%= @user.first_name %></h2>
+  <% @accounts.each do |account| %>
+ <div class="account">
+  <p>Account Number: <%= account.account_number %></p>
+  <p>Balance: <%= account.balance %></p>
+  <p>Name: <%= current_user.last_name %></p>
+</div>
+<% end %>
 <% else %>
   <%= link_to 'Sign in', new_user_session_path %>
 <% end %>

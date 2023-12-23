@@ -13,11 +13,6 @@ class User < ApplicationRecord
 
     after_create :create_account
 
-    def admin?
-      user=current_user
-      return true if user.role=="admin"
-    end
-
     private
 
     def set_default_role
