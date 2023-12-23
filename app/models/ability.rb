@@ -4,7 +4,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # user ||= User.new
+    user ||= User.new
     # can :read, Product, public: true
     # can :read, Company, public: true
     # can :read, Category, public: true
