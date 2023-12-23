@@ -1,1 +1,7 @@
-<p>Users</p>
+<% if user_signed_in? %>
+  <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete } %>
+  <%= link_to 'Edit Profile', edit_user_registration_path %>
+<h2>Welcome: <%= @user.first_name %></h2>
+<% else %>
+  <%= link_to 'Sign in', new_user_session_path %>
+<% end %>
